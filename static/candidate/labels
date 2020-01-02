@@ -1,0 +1,52 @@
+.lab{
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Montserrat';
+    margin-bottom: 2px;
+    padding:0 0 0 40%;
+    display: block;
+}
+
+label{
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Montserrat';
+    margin-bottom: 2px;
+    padding:0 0 0 40%;
+    display: block;
+}
+
+.sss {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #222;
+  font-weight: 400;
+  background-color: #ebeeef;
+  padding: 90px 0;}
+
+.container {
+  width: 1400px;
+  position: relative;
+  margin: 0 auto;
+  background: #fff; }
+
+#reset {
+    background: #f8f8f8;
+    color: #999;
+    margin-right: 8px;
+}
+.submit {
+    width: 140px;
+    height: 40px;
+    display: inline-block;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 13px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+#submit {
+    background: #ff6801;
+    color: #fff;
+}

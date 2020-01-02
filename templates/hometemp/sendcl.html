@@ -1,0 +1,23 @@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</br>
+</br>
+</br>
+</br>
+</br>
+<div style="margin-top: 50px; margin-left: 350px; margin-right: auto;" class="container">
+    <div class="col-lg-8">
+        <h1 align="center" style="color:#337ab7;">SEND MAIL</h1>
+<form method="POST">
+    {% csrf_token %}
+    <input type="hidden" name="aid" id="aid" value="{{updt.id}}" >
+    <input type="hidden" name="cid" id="cid" value="{{updt.cand.id}}" >
+    {{ form.as_p }}
+    <div align='center' class="form-actions">
+      <button type="submit" class="btn btn-primary">Send</button>
+    </div>
+</form>
+    </div>
+</div>

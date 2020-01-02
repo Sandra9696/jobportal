@@ -1,0 +1,109 @@
+{% extends 'hometemp/companyindex.html' %}
+{% load static %}
+{% block content %}
+
+    <title>company profile</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="{% static 'candidate/labels' %}" >
+<body>
+<div class="sss">
+    <h4 ALIGN="center" style="color:#337ab7;">ADD VACANCIES</h4>
+    <div class="main">
+        <div class="container">
+
+            <div class="signup-content">
+<form class="tab-content profile-tab" id = 'con' name="con" method="POST" action="vacancyaction">
+    {% csrf_token %}
+     {% for cmp1 in cmp %}
+    <input type="hidden" name="cid" id = "cid" value="{{cmp1.id}}">
+    {% endfor %}
+                                        <div class="row">
+                                           <div class="col-md-6">
+                                                <label style="font-family:'Open Sans',sans-serif; font-size:15px;">JOB TITLE :</label>
+                                           </div>
+                                               <div class="col-md-6">
+                                                <input type="text" name="title" id="title" required/>
+                                           </div>
+                                        </div>
+                                            </br>
+                                            <div class="row">
+                                           <div class="col-md-6">
+                                                <label style="font-family:'Open Sans',sans-serif; font-size:15px;">JOB DESCRIPTION :</label>
+                                               </div>
+                                               <div class="col-md-6">
+                                                <textarea name="description" id="description" cols="23" rows="4"></textarea>
+                                            </div>
+                                            </div>
+                                        </br>
+                                            <div class="row">
+                                            <div class="col-md-6">
+                                                <label style="font-family:'Open Sans',sans-serif; font-size:15px;">EXPERIENCE :</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" name="experience" id="experience" required/>
+                                            </div>
+                                            </div>
+                                        </br>
+                                             <div class="row">
+                                            <div class="col-md-6">
+                                                <label style="font-family:'Open Sans',sans-serif; font-size:15px;">KEY SKILLS :</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" name="skills" id="skills" required/>
+                                            </div>
+                                             </div>
+                                        </br>
+                                             <div class="row">
+                                            <div class="col-md-6">
+                                                <label style="font-family:'Open Sans',sans-serif; font-size:15px;">LOCATION :</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" name="location" id="location" required/>
+                                            </div>
+                                             </div>
+                                         </br>
+                                             <div class="row">
+                                            <div class="col-md-6">
+                                                <label style="font-family:'Open Sans',sans-serif; font-size:15px;">AVAILABILITY :</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" name="availability" id="availability" required/>
+                                            </div>
+                                             </div>
+                                        </br>
+                                             <div class="row">
+                                            <div class="col-md-6">
+                                                <label style="font-family:'Open Sans',sans-serif; font-size:15px;">QUALIFICATION :</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" name="qualification" id="qualification" required/>
+                                            </div>
+                                             </div>
+                                        </br>
+                                         <div class="row">
+                                            <div class="col-md-6">
+                                                <label style="font-family:'Open Sans',sans-serif; font-size:15px;">LAST DATE :</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" name="lastdate" id="lastdate" required/>
+                                            </div>
+                                         </div>
+                                        </br>
+                                             <div class="row">
+                                            <div align="right" class="col-md-8">
+                                             <input type="submit" value="reset" class="template-btn" name="reset"/>
+                                            </div>
+                                                  <div align="left" class="col-md-4">
+                                             <input type="submit" value="submit" class="template-btn"  name="submit"/>
+                                             </div>
+                                             </div>
+</form>
+</div>
+</div>
+    </div>
+</div>
+ </body>
+{% endblock %}

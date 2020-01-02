@@ -1,0 +1,38 @@
+{% extends 'hometemp/adminindex.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<div class="container-fluid">
+<table class="table table-hover">
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Address</th>
+        <th>Gender</th>
+        <th>Mobile</th>
+        <th>Email</th>
+        <th>Qualification</th>
+        <th>State</th>
+        <th>Skills</th>
+        <th>Resume</th>
+    </tr>
+    {% for cad in can %}
+    <tr>
+        <td>{{cad.name}}</td>
+        <td>{{cad.age}}</td>
+        <td>{{cad.address}}</td>
+        <td>{{cad.gender}}</td>
+        <td>{{cad.mobile}}</td>
+        <td>{{cad.email}}</td>
+        <td>{{cad.qualification}}</td>
+         <td>{{cad.state}}</td>
+        <td>{{cad.skills}}</td>
+        <td><a href="/media/{{cad.resume}}" download>{{cad.resume}}</a></td>
+        <td><a href="candidateupdate/{{cad.canlogin_id}}">Accept</a></td>
+        <td><a href="deletecan/{{cad.canlogin_id}}">Reject</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

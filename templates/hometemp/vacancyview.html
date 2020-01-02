@@ -1,0 +1,37 @@
+{% extends 'hometemp/adminindex.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<div class="col-lg-10">
+<div class="container-fluid">
+<table class="table table-hover">
+    <tr>
+        <th>Company Name</th>
+        <th>Company RegID</th>
+        <th>Job Title</th>
+        <th>Experience</th>
+        <th>Key Skills</th>
+        <th>Qualification</th>
+        <th>Last date</th>
+    </tr>
+    {% for vac1 in vac %}
+    <tr>
+        <td>{{vac1.cmpreg.cmpname}}</td>
+        <td>{{vac1.cmpreg.cmpregisterid}}</td>
+        <td>{{vac1.title}}</td>
+        <td>{{vac1.experience}}</td>
+        <td>{{vac1.skills}}</td>
+        <td>{{vac1.qualification}}</td>
+        <td>{{vac1.lastdate}}</td>
+        <td><a href="moreinfo/{{vac1.id}}">More info</td>
+        <td><a href="vacupdate/{{vac1.id}}">Accept</a></td>
+        <td><a href="deletevac/{{vac1.id}}">Reject</a></td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+</div>
+{% endblock %}

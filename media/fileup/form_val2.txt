@@ -1,0 +1,125 @@
+function check()
+{
+    var name=document.clientregister.name.value;
+    var gender=document.clientregister.gender.value;
+    var address=document.clientregister.address.value;
+    var number=document.clientregister.number.value;
+    var location=document.clientregister.location.value;
+    var accountnumber=document.clientregister.accountnumber.value;
+    var accessname=document.clientregister.accessname.value;
+    var passwordone=document.clientregister.passwordone.value;
+    var passwordtwo=document.clientregister.passwordtwo.value;
+    var letters = /^[A-Za-z ]+$/; 
+    var maxname=20;
+    var maxenadd=25;
+    var numbers = /^[0-9]+$/;
+    var phn=10;
+    var acc=12;
+    
+    if (name==null || name=="")
+    {  
+        document.getElementById("msg").innerHTML="MUST PROVIDE YOUR NAME"
+        return false; 
+    }
+    else
+    {
+        if(name.match(letters))
+        {
+            if(name.length >= maxname)      
+            {       
+                document.getElementById("msg").innerHTML="NAME TOO LONG"         
+                return false;     
+            }
+        }
+        else
+        {
+            document.getElementById("msg").innerHTML="NAME MUST HAVE CHARACTERS ONLY"         
+            return false;
+        }
+    }
+    if (gender==null || gender=="")
+    {  
+        document.getElementById("msg").innerHTML="MUST PROVIDE YOUR GENDER"
+        return false; 
+    }
+    if (address==null || address=="")
+    {  
+        document.getElementById("msg").innerHTML="MUST PROVIDE YOUR ADDRESS"
+        return false; 
+    }
+    else
+    {
+        if(address.length >= maxenadd)      
+        {       
+            document.getElementById("msg").innerHTML="ADDRESS TOO LONG"         
+            return false;     
+        }   
+    }
+    if (number==null || number=="")
+    {  
+        document.getElementById("msg").innerHTML="ENTER CONTACT NUMBER"
+        return false; 
+    }
+    else
+    {
+        if(number.match(numbers))
+        {
+            if(number.length == phn)
+            {
+
+            }
+            else
+            {
+                document.getElementById("msg").innerHTML="ENTER 10 DIGIT NUMBER"
+                return false; 
+            }
+        }
+        else
+        {
+           document.getElementById("msg").innerHTML="ENTER VALID CONTACT NUMBER"
+           return false;  
+        }
+    }
+    if (location==null || location=="")
+    {  
+        document.getElementById("msg").innerHTML="PROVIDE YOUR LOCATION"
+        return false; 
+    }
+    if (accountnumber==null || accountnumber=="")
+    {  
+        document.getElementById("msg").innerHTML="MUST PROVIDE YOUR ACCOUNT NUMBER"
+        return false; 
+    }
+    else
+    {
+        if(accountnumber.length != acc)      
+        {       
+            document.getElementById("msg").innerHTML="INVALID ACCOUNT NUMBER"         
+            return false;     
+        }   
+    }
+    if (accessname==null || accessname=="")
+	{  
+  		document.getElementById("msg").innerHTML="ENTER ACCESSNAME"
+  		return false; 
+	}
+ 	if (passwordone==null || passwordone=="")
+	{  
+  		document.getElementById("msg").innerHTML="ENTER PASSWORD" 
+  		return false;  
+	}		 
+	if (passwordtwo==null || passwordtwo=="")
+	{  
+  		document.getElementById("msg").innerHTML="RETYPE PASSWORD" 
+  		return false;  
+	}
+	if(passwordone==passwordtwo)
+	{
+	}
+	else
+	{
+		document.getElementById("msg").innerHTML="PASSWORD NOT MATCH" 
+  		return false; 
+	}
+    
+}

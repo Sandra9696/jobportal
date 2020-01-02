@@ -1,0 +1,36 @@
+{% extends 'hometemp/companyindex.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="{% static 'assets/css/footerstyle' %}">
+<div class="container">
+<div class="col-lg-10">
+<table class="table table-hover">
+
+    <tr>
+        <td>Name</td>
+        <td>Job title</td>
+        <td>Job description</td>
+        <td>Last date</td>
+    </tr>
+    {% for appli in appl %}
+    <tr>
+    <td>{{appli.cand.name}}</td>
+    <td>{{appli.vaca.title}}</td>
+    <td>{{appli.vaca.description}}</td>
+    <td>{{appli.vaca.lastdate}}</td>
+     <td><a href="more/{{appli.id}}">More info</a></td>
+        <td><a href="sendcl/{{appli.id}}">Approve</a></td>
+         <td><a href="deletecl/{{appli.id}}">Reject</a></td>
+
+
+</tr>
+    {% endfor %}
+</table>
+</div>
+</div>
+
+
+{% endblock %}

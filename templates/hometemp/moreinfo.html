@@ -1,0 +1,43 @@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</br>
+</br>
+</br>
+</br>
+</br>
+<div style="margin-top: 50px; margin-left: 350px; margin-right: auto;" class="container">
+    <div class="col-lg-8">
+        <h1 align="center" style="color:#337ab7;">DETAILS</h1>
+<table class="table table-bordered">
+    {% for vacn in va %}
+    <tr>
+        <td>Description</td>
+        <td>{{vacn.description}}</td>
+    </tr>
+    <tr>
+        <td>Emailid</td>
+         <td>{{vacn.cmpreg.cmpemail}}</td>
+    </tr>
+    <tr>
+        <td>Mobile</td>
+        <td>{{vacn.cmpreg.cmpmobile}}</td>
+    </tr>
+    <tr>
+        <td>Address</td>
+         <td>{{vacn.cmpreg.cmpaddress}}</td>
+    </tr>
+    <tr>
+        <td>Location</td>
+        <td>{{vacn.location}}</td>
+    </tr>
+    <tr>
+        <td>Availability</td>
+        <td>{{vacn.availability}}</td>
+    </tr>
+    {% endfor %}
+</table>
+    <a href ="../vacancyview">Back</a>
+        </div>
+</div>

@@ -1,0 +1,63 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</br>
+</br>
+<div style="margin-top: 50px; margin-left: 350px; margin-right: auto;" class="container">
+<div class="col-lg-8">
+    <h1 align="center" style="color:#337ab7;">CANDIDATE DETAILS</h1>
+<table class="table table-bordered">
+     {% for appli in ap %}
+    <tr>
+        <td>Name</td>
+        <td>{{appli.cand.name}}</td>
+    </tr>
+     <tr>
+        <td>Age</td>
+        <td>{{appli.cand.age}}</td>
+    </tr>
+     <tr>
+        <td>Address</td>
+        <td>{{appli.cand.address}}</td>
+    </tr>
+    <tr>
+        <td>State</td>
+        <td>{{appli.cand.state}}</td>
+    </tr>
+     <tr>
+        <td>Gender</td>
+        <td>{{appli.cand.gender}}</td>
+    </tr>
+     <tr>
+        <td>Mobile</td>
+        <td>{{appli.cand.mobile}}</td>
+    </tr>
+     <tr>
+        <td>Email</td>
+        <td>{{appli.cand.email}}</td>
+    </tr>
+     <tr>
+        <td>Qualification</td>
+        <td>{{appli.cand.qualification}}</td>
+    </tr>
+     <tr>
+        <td>Skills</td>
+        <td>{{appli.cand.skills}}</td>
+    </tr>
+    <tr>
+        <td>Submitted on</td>
+        <td>{{appli.date}}</td>
+    </tr>
+    <tr>
+        <td>Status</td>
+        <td>{{appli.astatus}}</td>
+    </tr>
+     <tr>
+        <td>Resume</td>
+        <td><a href="/media/{{appli.cand.resume}}" download="/media/{{appli.cand.resume}}">{{appli.cand.resume}}</a></td>
+    </tr>
+       {% endfor %}
+</table>
+  <a href ="../appliedvac" style="color:#337ab7;">Back</a>
+    </div>
+</div>

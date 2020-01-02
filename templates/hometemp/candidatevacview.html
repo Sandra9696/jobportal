@@ -1,0 +1,34 @@
+{% extends 'hometemp/candidateindex.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="{% static 'assets/css/footerstyle' %}">
+<div class="col-lg-10">
+<table class="table table-hover">
+    <tr>
+        <td>Company Name</td>
+        <td>Company RegID</td>
+        <td>Job Title</td>
+        <td>Experience</td>
+        <td>Key Skills</td>
+        <td>Qualification</td>
+        <td>Last date</td>
+    </tr>
+    {% for vac1 in vac %}
+    <tr>
+        <td>{{vac1.cmpreg.cmpname}}</td>
+        <td>{{vac1.cmpreg.cmpregisterid}}</td>
+        <td>{{vac1.title}}</td>
+        <td>{{vac1.experience}}</td>
+        <td>{{vac1.skills}}</td>
+        <td>{{vac1.qualification}}</td>
+        <td>{{vac1.lastdate}}</td>
+        <td><a href="candidatemoreinfo/{{vac1.id}}">More info</a></td>
+        <td><a href="candidateapply/{{vac1.id}}">Apply</a></td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+{% endblock %}

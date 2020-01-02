@@ -1,0 +1,31 @@
+{% extends 'hometemp/candidateindex.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="{% static 'assets/css/footerstyle' %}">
+<div class="col-lg-10">
+<table class="table table-hover">
+    <tr>
+        <td>Company Name</td>
+        <td>Job Title</td>
+        <td>Experience</td>
+        <td>Key Skills</td>
+        <td>Qualification</td>
+        <td>Last date</td>
+    </tr>
+    {% for vac1 in ap %}
+    <tr>
+        <td>{{vac1.comp.cmpname}}</td>
+        <td>{{vac1.vaca.title}}</td>
+        <td>{{vac1.vaca.experience}}</td>
+        <td>{{vac1.vaca.skills}}</td>
+        <td>{{vac1.vaca.qualification}}</td>
+        <td>{{vac1.vaca.lastdate}}</td>
+        <td><a href="callletter/{{vac1.id}}">Call letter</a></td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+{% endblock %}

@@ -1,0 +1,53 @@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</br>
+</br>
+</br>
+</br>
+</br>
+<form class="tab-content profile-tab" id = 'con' name="con" method="POST" action="applyaction" >
+      {% csrf_token %}
+    <input type="hidden" name="cid" id = "cid" value="{{vac.cmpreg.id}}">
+    <input type="hidden" name="vid" id = "vid" value="{{vac.id}}">
+    <input type="hidden" name="canid" id = "canid" value="{{can.id}}">
+<div style="margin-top: 50px; margin-left: 350px; margin-right: auto;" class="container">
+<div class="col-lg-8">
+    <h1 align="center" style="color:#337ab7;">MORE INFO</h1>
+<table class="table table-bordered">
+
+    <tr>
+        <td>Company Name:</td>
+        <td>{{vac.cmpreg.cmpname}}</td>
+    </tr>
+     <tr>
+        <td>Job Title:</td>
+        <td>{{vac.title}}</td>
+    </tr>
+     <tr>
+        <td>Experience:</td>
+        <td>{{vac.experience}}</td>
+    </tr>
+     <tr>
+        <td>Skills Required:</td>
+        <td>{{vac.skills}}</td>
+    </tr>
+     <tr>
+        <td>Qualification:</td>
+        <td>{{vac.qualification}}</td>
+    </tr>
+     <tr>
+        <td>Last Date:</td>
+        <td>{{vac.lastdate}}</td>
+    </tr>
+</table>
+    <div align="center">
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  <a href ="../candidatevacview" style="color:#337ab7;">Back</a>
+    </div>
+</div>
+</form>
+
+
